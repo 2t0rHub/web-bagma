@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Icon from "../AppIcon";
-import Button from "./Button";
+import { Button } from "./Button";
 
 const EmergencyContactWidget = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +23,8 @@ const EmergencyContactWidget = () => {
     };
   }, []);
 
-  const handleEmergencyCall = () => {
+  const handleEmergencyCall = (e: React.MouseEvent) => {
+    e?.preventDefault();
     window.location.href = "tel:+34900123456";
   };
 
@@ -86,7 +87,7 @@ const EmergencyContactWidget = () => {
 
             <Button
               variant="default"
-              fullWidth
+              fullWidth={true}
               iconName="Phone"
               iconPosition="left"
               onClick={handleEmergencyCall}
