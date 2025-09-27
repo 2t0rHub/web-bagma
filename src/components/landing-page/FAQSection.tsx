@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Icon from "@/components/AppIcon";
+import Icon from "@/components/AppIcon.tsx";
 
 const FAQSection = () => {
   const [openFAQ, setOpenFAQ] = useState(0);

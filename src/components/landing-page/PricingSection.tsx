@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/Button";
-import Select from "@/components/ui/Select";
-import Icon from "@/components/AppIcon";
+import { Button } from "@/components/ui/Button.tsx";
+import Select from "@/components/ui/Select.tsx";
+import Icon from "@/components/AppIcon.tsx";
 
 const PricingSection = () => {
   const [calculatorData, setCalculatorData] = useState({

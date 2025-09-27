@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/Button";
-import { Checkbox } from "@/components/ui/Checkbox";
-import Select from "@/components/ui/Select";
-import Icon from "@/components/AppIcon";
-import Input from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button.tsx";
+import { Checkbox } from "@/components/ui/Checkbox.tsx";
+import Select from "@/components/ui/Select.tsx";
+import Icon from "@/components/AppIcon.tsx";
+import Input from "@/components/ui/Input.tsx";
 
 interface FormData {
   name: string;

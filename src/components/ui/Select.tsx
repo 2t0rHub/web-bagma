@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import { ChevronDown, Check, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
-import Input from "@/components/ui/Input";
+import { Button } from "@/components/ui/Button.tsx";
+import Input from "@/components/ui/Input.tsx";
 
 interface SelectOption {
   value: string;

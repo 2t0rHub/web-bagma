@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Icon from "@/components/AppIcon";
-import Image from "@/components/AppImage";
+import Icon from "@/components/AppIcon.tsx";
+import Image from "@/components/AppImage.tsx";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);

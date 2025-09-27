@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Icon from "@/components/AppIcon";
-import Image from "@/components/AppImage";
-import { Button } from "@/components/ui/Button";
+import Icon from "@/components/AppIcon.tsx";
+import Image from "@/components/AppImage.tsx";
+import { Button } from "@/components/ui/Button.tsx";
 
 const ServicesSection = () => {
   const [activeService, setActiveService] = useState(0);
