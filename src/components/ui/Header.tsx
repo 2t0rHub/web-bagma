@@ -39,7 +39,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href) => {
+  const handleNavClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       const headerHeight = 80;

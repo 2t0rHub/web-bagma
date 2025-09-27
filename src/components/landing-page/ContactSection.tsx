@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import { Button } from "../ui/Button";
-import type { Checkbox } from "../ui/Checkbox";
+import { Checkbox } from "../ui/Checkbox";
 import Select from "../ui/Select";
 import Icon from "../AppIcon";
 import Input from "../ui/Input";
 
+interface FormData {
+  name: string;
+  email: string;
+  phone: string;
+  service: string;
+  propertyType: string;
+  urgency: string;
+  message: string;
+  acceptTerms: boolean;
+  acceptMarketing: boolean;
+}
+
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
     phone: "",
@@ -20,7 +32,7 @@ const ContactSection = () => {
   const [formStep, setFormStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<Partial<FormData>>({});
 
   const serviceOptions = [
     { value: "ac-installation", label: "Instalación Aire Acondicionado" },
@@ -72,7 +84,7 @@ const ContactSection = () => {
   ];
 
   const validateForm = () => {
-    const newErrors = {};
+    const newErrors: any = {};
 
     if (!formData?.name?.trim()) newErrors.name = "El nombre es requerido";
     if (!formData?.email?.trim()) newErrors.email = "El email es requerido";
@@ -97,7 +109,10 @@ const ContactSection = () => {
     return Object.keys(newErrors)?.length === 0;
   };
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (
+    field: keyof FormData,
+    value: string | string[] | boolean,
+  ) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -120,7 +135,7 @@ const ContactSection = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e?.preventDefault();
 
     if (!validateForm()) return;
@@ -369,7 +384,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       handleInputChange("name", e?.target?.value)
                     }
-                    error={errors?.name}
+                    error={errors?.name as string}
                     placeholder="Tu nombre completo"
                     required
                   />
@@ -381,7 +396,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       handleInputChange("email", e?.target?.value)
                     }
-                    error={errors?.email}
+                    error={errors?.email as string}
                     placeholder="tu@email.com"
                     required
                   />
@@ -393,7 +408,7 @@ const ContactSection = () => {
                     onChange={(e) =>
                       handleInputChange("phone", e?.target?.value)
                     }
-                    error={errors?.phone}
+                    error={errors?.phone as string}
                     placeholder="+34 600 000 000"
                     required
                   />
@@ -422,7 +437,7 @@ const ContactSection = () => {
                     options={serviceOptions}
                     value={formData?.service}
                     onChange={(value) => handleInputChange("service", value)}
-                    error={errors?.service}
+                    error={errors?.service as string}
                     placeholder="Selecciona un servicio"
                     required
                   />
@@ -463,17 +478,17 @@ const ContactSection = () => {
                     <Checkbox
                       label="Acepto los términos y condiciones y la política de privacidad"
                       checked={formData?.acceptTerms}
-                      onChange={(e) =>
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         handleInputChange("acceptTerms", e?.target?.checked)
                       }
-                      error={errors?.acceptTerms}
+                      error={errors?.acceptTerms as any}
                       required
                     />
 
                     <Checkbox
                       label="Acepto recibir comunicaciones comerciales sobre ofertas y promociones"
                       checked={formData?.acceptMarketing}
-                      onChange={(e) =>
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                         handleInputChange("acceptMarketing", e?.target?.checked)
                       }
                     />

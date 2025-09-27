@@ -78,7 +78,7 @@ const ServicesSection = () => {
     },
   ];
 
-  const handleServiceSelect = (index) => {
+  const handleServiceSelect = (index: number) => {
     setActiveService(index);
   };
 
@@ -110,7 +110,7 @@ const ServicesSection = () => {
 
         {/* Service Tabs */}
         <div className="bg-muted mb-12 flex flex-col gap-4 rounded-2xl p-2 lg:flex-row">
-          {services?.map((service, index) => (
+          {services?.map((service: any, index: number) => (
             <button
               key={service?.id}
               onClick={() => handleServiceSelect(index)}

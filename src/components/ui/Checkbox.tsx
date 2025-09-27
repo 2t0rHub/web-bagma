@@ -1,8 +1,22 @@
 import React from "react";
 import { Check, Minus } from "lucide-react";
-import { cn } from "../../utils/cn";
+import { cn } from "@/lib/utils";
 
-const Checkbox = React.forwardRef(
+interface CheckboxProps
+  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
+  className?: string;
+  id?: string;
+  checked?: boolean;
+  indeterminate?: boolean;
+  disabled?: boolean;
+  required?: boolean;
+  label?: string;
+  description?: string;
+  error?: string | boolean;
+  size?: "sm" | "default" | "lg";
+}
+
+const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
   (
     {
       className,
@@ -93,8 +107,19 @@ const Checkbox = React.forwardRef(
 
 Checkbox.displayName = "Checkbox";
 
+interface CheckboxGroupProps
+  extends React.FieldsetHTMLAttributes<HTMLFieldSetElement> {
+  className?: string;
+  children?: React.ReactNode;
+  label?: string;
+  description?: string;
+  error?: string | boolean;
+  required?: boolean;
+  disabled?: boolean;
+}
+
 // Checkbox Group component
-const CheckboxGroup = React.forwardRef(
+const CheckboxGroup = React.forwardRef<HTMLFieldSetElement, CheckboxGroupProps>(
   (
     {
       className,
