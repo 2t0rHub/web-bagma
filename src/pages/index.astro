@@ -1,7 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "@/components/ui/Header";
+import HeroSection from "@/components/landing-page/HeroSection";
+import Layout from "../layouts/Layout.astro";
+import LandingPage from "@/components/landing-page/index";
+import ProblemSection from "@/components/landing-page/ProblemSection";
+import BenefitsSection from "@/components/landing-page/BenefitsSection";
+import ContactSection from "@/components/landing-page/ContactSection";
+import FAQSection from "@/components/landing-page/FAQSection";
+import Footer from "@/components/landing-page/Footer";
+import PricingSection from "@/components/landing-page/PricingSection";
+import ServicesSection from "@/components/landing-page/ServicesSection";
+import TestimonialsSection from "@/components/landing-page/TestimonialsSection";
+import SectionProgressIndicator from "@/components/ui/SectionProgressIndicator";
+import ConversionTrackingNavigation from "@/components/ui/ConversionTrackingNavigation";
+import EmergencyContactWidget from "@/components/ui/EmergencyContactWidget";
+// Tailwind CSS is imported in global.css
 ---
+
 <Layout>
-	<Welcome />
+  <Header client:load />
+  <ConversionTrackingNavigation client:load />
+  <SectionProgressIndicator client:load />
+  <EmergencyContactWidget client:load />
+
+  <!-- main -->
+  <HeroSection client:load />
+  <ProblemSection client:load />
+  <ServicesSection client:load />
+  <BenefitsSection client:load />
+  <TestimonialsSection client:load />
+  <PricingSection client:load />
+  <FAQSection client:load />
+  <ContactSection client:load />
+
+  <!-- Footer -->
+  <Footer client:load />
 </Layout>

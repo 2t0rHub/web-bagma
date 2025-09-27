@@ -1,0 +1,337 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Fallback colors for better browser support */
+@supports not (color: oklch(0 0 0)) {
+  :root {
+    --background: #ffffff;
+    --foreground: #1f2937;
+    --card: #ffffff;
+    --card-foreground: #1f2937;
+    --popover: #ffffff;
+    --popover-foreground: #1f2937;
+    --primary: #1e40af;
+    --primary-foreground: #ffffff;
+    --secondary: #7dbbf9;
+    --secondary-foreground: #1e40af;
+    --muted: #f1f5f9;
+    --muted-foreground: #6b7280;
+    --accent: #f1f5f9;
+    --accent-foreground: #1e40af;
+    --destructive: #ef4444;
+    --border: #e5e7eb;
+    --input: #e5e7eb;
+    --ring: #3b82f6;
+    --urgency: var(--destructive);
+  }
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #1e40af;
+  --primary-foreground: #ffffff;
+  --secondary: #a1cefa;
+  --secondary-foreground: #1e40af;
+  --muted: #f1f5f9;
+  --muted-foreground: #6b7280;
+  --accent: #f1f5f9;
+  --accent-foreground: #1e40af;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #3b82f6;
+  --chart-1: #f59e0b;
+  --chart-2: #10b981;
+  --chart-3: #3b82f6;
+  --chart-4: #8b5cf6;
+  --chart-5: #f97316;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1f2937;
+  --sidebar-primary: #1e40af;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f1f5f9;
+  --sidebar-accent-foreground: #1e40af;
+  --sidebar-border: #e5e7eb;
+  --sidebar-ring: #3b82f6;
+
+  /* Additional variables for components */
+  --color-success: #10b981;
+  --color-success-foreground: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #ffffff;
+  --color-error: #ef4444;
+  --color-error-foreground: #ffffff;
+  --color-urgency: #ef4444;
+  --color-urgency-foreground: #ffffff;
+  --color-text-primary: #1f2937;
+  --color-text-secondary: #6b7280;
+  --color-surface: #f8fafc;
+
+  /* Legacy variables for backward compatibility */
+  --success: var(--color-success);
+  --success-foreground: var(--color-success-foreground);
+  --warning: var(--color-warning);
+  --warning-foreground: var(--color-warning-foreground);
+  --error: var(--color-error);
+  --error-foreground: var(--color-error-foreground);
+  --urgency: var(--color-urgency);
+  --urgency-foreground: var(--color-urgency-foreground);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --surface: var(--color-surface);
+}
+
+.dark {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --card: #1e293b;
+  --card-foreground: #f8fafc;
+  --popover: #1e293b;
+  --popover-foreground: #f8fafc;
+  --primary: #3b82f6;
+  --primary-foreground: #ffffff;
+  --secondary: #334155;
+  --secondary-foreground: #f8fafc;
+  --muted: #334155;
+  --muted-foreground: #94a3b8;
+  --accent: #334155;
+  --accent-foreground: #f8fafc;
+  --destructive: #ef4444;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #3b82f6;
+  --chart-1: #f59e0b;
+  --chart-2: #10b981;
+  --chart-3: #3b82f6;
+  --chart-4: #8b5cf6;
+  --chart-5: #f97316;
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #3b82f6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: #3b82f6;
+
+  /* Additional dark mode variables */
+  --color-success: #10b981;
+  --color-success-foreground: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-foreground: #ffffff;
+  --color-error: #ef4444;
+  --color-error-foreground: #ffffff;
+  --color-urgency: #ef4444;
+  --color-urgency-foreground: #ffffff;
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8;
+  --color-surface: #334155;
+
+  /* Legacy variables for backward compatibility */
+  --success: var(--color-success);
+  --success-foreground: var(--color-success-foreground);
+  --warning: var(--color-warning);
+  --warning-foreground: var(--color-warning-foreground);
+  --error: var(--color-error);
+  --error-foreground: var(--color-error-foreground);
+  --urgency: var(--color-urgency);
+  --urgency-foreground: var(--color-urgency-foreground);
+  --text-primary: var(--color-text-primary);
+  --text-secondary: var(--color-text-secondary);
+  --surface: var(--color-surface);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Custom utility classes for components */
+  .text-text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-success {
+    color: var(--color-success);
+  }
+
+  .text-warning {
+    color: var(--color-warning);
+  }
+
+  .text-error {
+    color: var(--color-error);
+  }
+
+  .text-urgency {
+    color: var(--color-urgency);
+  }
+
+  .bg-urgency {
+    background-color: var(--color-urgency);
+  }
+
+  .border-urgency {
+    border-color: var(--color-urgency);
+  }
+
+  .bg-urgency\/10 {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+
+  .border-urgency\/20 {
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+
+  .text-urgency\/80 {
+    color: rgba(239, 68, 68, 0.8);
+  }
+
+  .bg-urgency\/5 {
+    background-color: rgba(239, 68, 68, 0.05);
+  }
+
+  .hover\:bg-urgency:hover {
+    background-color: var(--color-urgency);
+  }
+
+  .hover\:text-urgency:hover {
+    color: var(--color-urgency);
+  }
+
+  .hover\:bg-urgency\/90:hover {
+    background-color: rgba(239, 68, 68, 0.9);
+  }
+
+  .hover\:text-urgency\/80:hover {
+    color: rgba(239, 68, 68, 0.8);
+  }
+
+  .hover\:bg-primary\/90:hover {
+    background-color: rgba(30, 64, 175, 0.9);
+  }
+
+  .bg-primary\/10 {
+    background-color: rgba(30, 64, 175, 0.1);
+  }
+
+  .bg-secondary\/10 {
+    background-color: rgba(241, 245, 249, 0.1);
+  }
+
+  .shadow-subtle {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .shadow-card {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .transition-smooth {
+    transition: all 200ms ease-in-out;
+  }
+
+  .transition-carousel {
+    transition: all 300ms ease-in-out;
+  }
+
+  /* Additional utility classes for better color support */
+  .bg-success {
+    background-color: var(--success);
+  }
+
+  .text-success {
+    color: var(--success);
+  }
+
+  .bg-warning {
+    background-color: var(--warning);
+  }
+
+  .text-warning {
+    color: var(--warning);
+  }
+
+  .bg-error {
+    background-color: var(--error);
+  }
+
+  .text-error {
+    color: var(--error);
+  }
+
+  .bg-surface {
+    background-color: var(--surface);
+  }
+
+  .text-text-primary {
+    color: var(--text-primary);
+  }
+
+  .text-text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .bg-text-primary {
+    background-color: var(--text-primary);
+  }
+
+  .bg-text-secondary {
+    background-color: var(--text-secondary);
+  }
+}
