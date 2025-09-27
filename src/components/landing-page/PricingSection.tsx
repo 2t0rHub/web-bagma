@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Button } from "../ui/Button";
-import Select from "../ui/Select";
-import Icon from "../AppIcon";
+import { Button } from "@/components/ui/Button";
+import Select from "@/components/ui/Select";
+import Icon from "@/components/AppIcon";
 
 const PricingSection = () => {
   const [calculatorData, setCalculatorData] = useState({
@@ -171,7 +171,7 @@ const PricingSection = () => {
     setEstimatedPrice(Math.round(basePrice));
   };
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: string) => {
     console.log("Input change:", field, value);
     setCalculatorData((prev) => ({
       ...prev,

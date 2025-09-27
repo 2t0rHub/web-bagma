@@ -1,5 +1,5 @@
 import React from "react";
-import Icon from "../AppIcon";
+import Icon from "@/components/AppIcon";
 
 const Footer = () => {
   const currentYear = new Date()?.getFullYear();
@@ -30,7 +30,7 @@ const Footer = () => {
     "Técnicos Certificados",
   ];
 
-  const handleLinkClick = (href) => {
+  const handleLinkClick = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
       const headerHeight = 80;

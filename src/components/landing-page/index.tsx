@@ -1,17 +1,17 @@
 import React, { useEffect } from "react";
-import Header from "../../components/ui/Header";
-import EmergencyContactWidget from "../../components/ui/EmergencyContactWidget";
-import SectionProgressIndicator from "../../components/ui/SectionProgressIndicator";
-import ConversionTrackingNavigation from "../../components/ui/ConversionTrackingNavigation";
-import HeroSection from "./components/HeroSection";
-import ProblemSection from "./components/ProblemSection";
-import ServicesSection from "./components/ServicesSection";
-import BenefitsSection from "./components/BenefitsSection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import PricingSection from "./components/PricingSection";
-import ContactSection from "./components/ContactSection";
-import FAQSection from "./components/FAQSection";
-import Footer from "./components/Footer";
+import Header from "@/components/ui/Header";
+import EmergencyContactWidget from "@/components/ui/EmergencyContactWidget";
+import SectionProgressIndicator from "@/components/ui/SectionProgressIndicator";
+import ConversionTrackingNavigation from "@/components/ui/ConversionTrackingNavigation";
+import HeroSection from "@/components/landing-page/HeroSection";
+import ProblemSection from "@/components/landing-page/ProblemSection";
+import ServicesSection from "@/components/landing-page/ServicesSection";
+import BenefitsSection from "@/components/landing-page/BenefitsSection";
+import TestimonialsSection from "@/components/landing-page/TestimonialsSection";
+import PricingSection from "@/components/landing-page/PricingSection";
+import ContactSection from "@/components/landing-page/ContactSection";
+import FAQSection from "@/components/landing-page/FAQSection";
+import Footer from "@/components/landing-page/Footer";
 
 const LandingPage = () => {
   useEffect(() => {

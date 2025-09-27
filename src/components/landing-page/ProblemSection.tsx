@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Icon from "../AppIcon";
-import Image from "../AppImage";
+import Icon from "@/components/AppIcon";
+import Image from "@/components/AppImage";
 
 const ProblemSection = () => {
   const [selectedProblem, setSelectedProblem] = useState(0);

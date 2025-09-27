@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "../ui/Button";
-import Icon from "../AppIcon";
+import { Button } from "@/components/ui/Button";
+import Icon from "@/components/AppIcon";
 
 const HeroSection = () => {
   const [currentTemp, setCurrentTemp] = useState(28);

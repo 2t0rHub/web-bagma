@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Icon from "../AppIcon";
+import Icon from "@/components/AppIcon";
 
 const FAQSection = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
@@ -49,7 +49,7 @@ const FAQSection = () => {
 
   const categories = [...new Set(faqs.map((faq) => faq.category))];
 
-  const toggleFAQ = (index) => {
+  const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? -1 : index);
   };
 
