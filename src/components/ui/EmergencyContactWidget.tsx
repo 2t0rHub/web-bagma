@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Icon from "../AppIcon";
-import { Button } from "./Button";
+import Icon from "@/components/AppIcon";
+import { Button } from "@/components/ui/Button";
 
 const EmergencyContactWidget = () => {
   const [isVisible, setIsVisible] = useState(false);
